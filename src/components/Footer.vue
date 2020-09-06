@@ -42,7 +42,7 @@
     <div class="Contact">
       <h2 class="title">Contact</h2>
       <p>
-        <a href="mailto:francogiordani@gmail.com" target="_blank">Email me</a>
+        <a href="mailto:francogiordanid@gmail.com" target="_blank">Email me</a>
       </p>
     </div>
   </div>
