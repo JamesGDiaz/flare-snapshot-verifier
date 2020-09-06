@@ -1,7 +1,7 @@
 <template>
   <div class="tool">
     <p>Enter the XRP address you want to check</p>
-    <input v-model="address" type="text" placeholder="rKyVZwF8ZAL13CW3Fg2PFnHinrGsRR2vm" />
+    <input v-model="address" type="text" placeholder="Your XRP address here..." />
     <div v-if="error" class="alert">
       <p>{{errorMessage}}</p>
     </div>
@@ -152,17 +152,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .output {
-  margin-left: 15%;
-  margin-right: 15%;
+    width: 80%;
+  margin:0 auto;
   margin-top: 72px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
-
 .result {
   div {
     padding: 6px 24px;

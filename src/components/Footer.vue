@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="links">
-      <h2>Links</h2>
+      <h2> Useful Links</h2>
       <ul>
         <li>
           <a
@@ -32,12 +32,18 @@
     <div class="donations">
       <h2 class="title">Donate</h2>
       <p>
-        XRP Address:
-        <span class="code address">rKyVZwF8ZAL13CW3Fg2PFnHinrGsRR2vm</span>
+        <span class="code address">rLSn6Z3T8uCxbcd1oxwfGQN1Fdn5CyGujK</span><br/><br/>
+        Destination Tag: <span style="font-weight:bold;">38806694</span>
       </p>
       <div class="qrcode">
         <img src="../assets/donations-qr.png" />
       </div>
+    </div>
+    <div class="Contact">
+      <h2 class="title">Contact</h2>
+      <p>
+        <a href="mailto:francogiordani@gmail.com" target="_blank">Email me</a>
+      </p>
     </div>
   </div>
 </template>

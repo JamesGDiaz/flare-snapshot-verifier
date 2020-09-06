@@ -9,7 +9,7 @@
     <h2>Welcome!</h2>
     <p class="description">
       <br />This tool is meant to help you verify if an XRP account is properly set up to receive the
-      corresponding FXRP tokens coming from the
+      corresponding FXRP tokens coming from
       <a
         href="https://flare.ghost.io/"
         target="_blank"
@@ -32,6 +32,12 @@ export default {
   .logos {
     height: 100px;
     img:first-child {
+      @media screen and (max-width: 400px) {
+        margin-right: 60px;
+      }
+       @media screen and (max-width: 350px) {
+        margin-right: 30px;
+      }
       margin-right: 120px;
     }
     margin-bottom: 50px;
