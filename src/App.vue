@@ -1,19 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <Disclaimers v-show="!disclaimersAccepted" @disclaimers-accepted="test" />
+    <Tool v-if="disclaimersAccepted" />
+    <Footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Disclaimers from './components/Disclaimers.vue'
+import Tool from './components/Tool.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Disclaimers,
+    Tool,
+    Header,
+    Footer
   },
-};
+  data() {
+    return {
+      disclaimersAccepted: false
+    }
+  },
+  methods: {
+    test: function() {
+      this.disclaimersAccepted = true
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -22,7 +40,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color:$gray-dark;
+  margin: 60px 5% 60px 5%;
 }
 </style>
