@@ -34,7 +34,7 @@
         </div>
         <div v-if="accountReadyMessage" class="ready">
           <p>            
-            Your account is set and configured to receive the FXRP on the ETH address
+            Your account is set and configured to receive the Spark on the ETH address
             <br />
             <a
               v-bind:href="'https://etherscan.io/address/0x'+this.ethAddress"
@@ -42,7 +42,7 @@
               rel="noopen noreferrer"
             >0x{{this.ethAddress}}</a>
             <br />As of right now, you will receive
-            <span style="font-weight:bold;">{{this.receiveAmount}}</span> FXRP tokens &#x1F604;
+            <span style="font-weight:bold;">{{this.receiveAmount}}</span> Spark tokens &#x1F604;
           </p>
         </div>
       </div>

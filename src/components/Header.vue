@@ -9,7 +9,7 @@
     <h2>Welcome!</h2>
     <p class="description">
       <br />This tool is meant to help you verify if an XRP account is properly set up to receive the
-      corresponding FXRP tokens coming from
+      corresponding Spark tokens coming from
       <a
         href="https://flare.ghost.io/"
         target="_blank"
