@@ -26,7 +26,7 @@
       <p>
         Thanks to
         <a href="https://twitter.com/wietsewind" target="_blank" rel="noopen noreferrer">@wietsewind</a>
-        for developing the tools used to communicate with the XRP Ledger :)
+        for developing the tools used here to communicate with the XRP Ledger :)
       </p>
     </div>
     <div class="donations">
