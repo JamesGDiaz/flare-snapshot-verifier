@@ -1,32 +1,21 @@
 {
-  "name": "flare-snapshot-verifier",
-  "version": "0.1.0",
-  "private": true,
+  "name": "mern-boilerplate",
+  "version": "1.0.1",
+  "description": "README.md",
+  "main": "app.js",
+  "author": "Franco Giordani",
+  "contact": "francogiordanid@gmail.com",
+  "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev:client": "npm run serve --prefix client/",
+    "dev:server": "npm run dev --prefix server/",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "build": "npm run build --prefix client/ && npm run build --prefix server/",
+    "start": "cd build && node app.js #pm2 start build/app.js -i max",
+    "stop": "pm2 stop all",
+    "delete": "pm2 delete app"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "ethereum-regex": "^1.1.13",
-    "ripple-regex": "^1.1.8",
-    "rippled-ws-client": "^1.6.3",
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "concurrently": "^4.1.0"
   }
 }
