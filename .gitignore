@@ -65,3 +65,7 @@ typings/
 
 # production
 build/
+
+
+# databases
+*.sqlite
