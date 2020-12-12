@@ -9,7 +9,7 @@
         <span
           class="code"
         >MessageKey</span> in the provided address complies with the format
-        specified by the Flare Network developers. That is: 02 followed by 24 zeroes and then a valid ETH address withouth the 0x prefix.
+        specified by the Flare Networks developers. That is: 02 followed by 24 zeroes and then a valid ETH address withouth the 0x prefix.
         <br />
         <br />You should
         <span style="font-weight:bold;">NEVER</span> provide your account secrets to anyone, and you should keep them in a

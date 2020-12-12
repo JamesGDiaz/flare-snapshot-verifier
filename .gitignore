@@ -69,3 +69,5 @@ build/
 
 # databases
 *.sqlite
+**/*.sqlite
+server/src/db/accounts.sqlite

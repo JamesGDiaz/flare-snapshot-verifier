@@ -26,9 +26,13 @@
         <div class="result" v-if="!loading">
           <div v-if="accountNotReadyMessage" class="not-ready">
             <p style="text-align:center;">
-              This account is not configured.
-              <br />
-              <a href="https://flare.wietse.com/" target="_blank" rel="noopen noreferrer">Set up your account here</a>
+              This account is not configured to claim Spark tokens.
+              <br/>
+              You could receive at least <span style="font-size:large;font-weight:bold;">{{ this.receiveAmount }}</span> Spark
+              <br /><br />
+              <a href="https://flare.wietse.com/" target="_blank" rel="noopen noreferrer">You can set up your account here (thanks @wietsewind)</a>
+              <br/><br/>
+              <small>If you want, you can support the developer of this tool using the address below &#x1F495;</small>
             </p>
           </div>
           <div v-if="wrongMessageKeyMessage" class="not-ready">
@@ -36,6 +40,8 @@
               This account doesn't have the correct MessageKey, to properly configure it, please use
               <br />
               <a href="https://flare.wietse.com/" target="_blank" rel="noopen noreferrer">this tool</a>.
+              <br/><br/>
+              <small>If you want, you can support the developer of this tool using the address below &#x1F495;</small>
             </p>
           </div>
           <div v-if="accountReadyMessage" class="ready">
@@ -50,6 +56,8 @@
               >
               <br />You will receive at least
               <span style="font-size:large;font-weight:bold;">{{ this.receiveAmount }}</span> Spark tokens &#x1F604;
+              <br/><br/>
+              <small>If you want, you can support the developer of this tool using the address below &#x1F495;</small>
             </p>
           </div>
           <div v-if="notFoundInSnapshot" class="not-ready">
@@ -57,6 +65,8 @@
               This address was not found in the snapshot.
               <br />
               Sorry &#x1F614;
+              <br/><br/>
+              <small>If you want, you can support the developer of this tool using the address below &#x1F495;</small>
             </p>
           </div>
         </div>
@@ -132,7 +142,8 @@ export default {
               this.notFoundInSnapshot = true
               return
             } else if (snapshotData) {
-              console.log('found ya boi')
+              this.receiveAmount = snapshotData.balance
+              console.log('found ya boi, youll get ' + this.receiveamount + ' FLR')
             }
             new RippledWsClient('wss://xrpl.ws')
               .then(connection => {
@@ -166,7 +177,9 @@ export default {
       }
     },
     processResult(res, snapshotData) {
+      this.receiveAmount = snapshotData.balance
       this.loading = false
+
       console.debug('Data: ', res)
       if (res.error) {
         this.showError('Error: ' + res.error_message)
@@ -175,7 +188,7 @@ export default {
         if (accountData.MessageKey) {
           if (new RegExp(messageKeyRe, 'g').test(accountData.MessageKey)) {
             this.ethAddress = accountData.MessageKey.match(messageKeyRe)[2]
-            this.receiveAmount = snapshotData.balance
+
             console.log(`Found ETH address: ${this.ethAddress}`)
             console.log(`Balance: ${this.receiveAmount}`)
             this.accountReadyMessage = true
